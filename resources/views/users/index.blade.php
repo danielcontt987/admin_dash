@@ -32,7 +32,7 @@
                 <!--getRolName es de la libreria de spatie-->
                 @if (!empty($user->getRoleNames()))
                    @foreach ($user->getRoleNames() as $rol )
-                       <h5><span>{{$rol}}</span></h5>
+                       <h6 class="btn btn-success btn-xs">{{$rol}}</h6>
                    @endforeach
                 @endif
             </td>

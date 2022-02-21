@@ -111,8 +111,8 @@ class UserController extends Controller
         $user->update($input);
         DB::table('model_has_roles')->where('model_id', $id)->delete();
 
-        $user->assingRole($request->input('roles'));
-        return redirect()->route('users.editar');
+        $user->assignRole($request->input('roles'));
+        return redirect()->route('users.index');
     }
 
     /**
@@ -124,7 +124,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         User::find($id)->delete();
-        return redirect()->route('users.index')->with('Usuarios eliminado');
+        return redirect()->route('users.index');
 
     }
 
