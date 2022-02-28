@@ -9,7 +9,7 @@ class BlogController extends Controller
 {
     function __construct()
     {
-        $this->middleware('permission:ver-blog | crear-blog | editar-blog | borrar-blog', ['only' => ['index']]);
+        $this->middleware('permission:ver-blog|crear-blog|editar-blog|borrar-blog', ['only' => ['index']]);
         $this->middleware('permission:crear-blog ', ['only' => ['create','store']]);
         $this->middleware('permission:editar-blog', ['only' => ['edit','update']]);
         $this->middleware('permission:borrar-blog', ['only' => ['destroy']]);
@@ -43,13 +43,18 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate([
+       $this->validate($request, [
             'title' => 'required',
             'content' => 'required'
         ]);
 
-        Blog::create([$request->all()]);
-        return view('blog.index');
+        Blog::create([
+            'title' => $request->title,
+            'content' => $request->content,
+
+        ]);
+       return redirect()->to('blogs');
+
     }
 
     /**

@@ -38,7 +38,7 @@
                                     @can('borrar-rol')
                                     {!! Form::open(['method' =>'DELETE', 'route' => ['roles.destroy', $rol->id], 'style' => 'display:inline']) !!}
                                     {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
-                                      {!! Form::close() !!}
+                                    {!! Form::close() !!}
                                     @endcan
 
                                 </td>

@@ -24,13 +24,16 @@ Route::get('/', function () {
 //Route::get('/dash/users',[ App\Http\Controllers\UserController::class, 'list'])->name('users');
 
 //Main panel
-Route::middleware(['auth:sanctum', 'verified'])->get('/dash', function () {
-    return view('dash.index');
-})->name('dash');
+Route::middleware(['auth:sanctum', 'verified'])->get('/principal', function () {
+    return view('principal.index');
+})->name('principal');
 
 
 Route::group(['middleware' => ['auth']], function(){
-  Route::resource('roles', RoleController::class);
-  Route::resource('users', UserController::class);
+
+  Route::prefix('/admin')->group(function () {
+    Route::resource('/usuarios', UserController::class);
+    Route::resource('/roles', RoleController::class);
+});
   Route::resource('blogs', BlogController::class);
 });

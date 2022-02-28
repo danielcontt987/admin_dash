@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Dashboard')
+@section('title', 'Principal')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1 class="text-center">Panel de control</h1>
 @stop
 
 @section('content')
@@ -26,9 +26,9 @@
     <p>Usuarios</p>
     </div>
     <div class="icon">
-    <i class="ion ion-bag"></i>
+    <i class="fas fa-users"></i>
     </div>
-    <a href="/users" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
+    <a href="/admin/usuarios" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
     </div>
     </div>
 
@@ -46,7 +46,7 @@
     <p>Roles</p>
     </div>
     <div class="icon">
-    <i class="ion ion-stats-bars"></i>
+    <i class="fas fa-key"></i>
     </div>
     <a href="#" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -66,7 +66,7 @@
     <p>Permisos</p>
     </div>
     <div class="icon">
-    <i class="ion ion-person-add"></i>
+    <i class="fas fa-lock"></i>
     </div>
     <a href="#" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -86,7 +86,7 @@
     <p>Blog</p>
     </div>
     <div class="icon">
-    <i class="ion ion-pie-graph"></i>
+    <i class="fas fa-blog"></i>
     </div>
     <a href="#" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
     </div>
@@ -105,5 +105,6 @@
 @stop
 
 @section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/6.0.1/esm/ionicons.min.js" integrity="sha512-EmbXlzmS4lTfNxBz7xWacOcWYBw42KAzHTbtuVQvCPrR+fTeHHMB2dnxKqxhwqSqrK8foPW/LZOnHof4DCDHMw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script> console.log('Hi!'); </script>
 @stop

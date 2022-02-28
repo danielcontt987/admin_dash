@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar usuario')
+@section('title', 'Crear usuario')
 
 @section('content_header')
-    <h1>Editar de usuario</h1>
+    <h1>Creación de usuarios</h1>
 @stop
 
 @section('content')
@@ -25,7 +25,7 @@
                        </div>
                    @endif
 
-                   {!! Form::model($user,['method' => 'PUT', 'route' =>['users.update', $user->id]]) !!}
+                   {!!Form::open(array('route' => 'usuarios.store', 'method' => 'post')) !!}
                      <div class="row">
                          <div class="col-xs-12 col-sm-12 col-md-12">
                              <div class="form-group">

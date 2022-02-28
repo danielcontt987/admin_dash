@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Crear usuario')
+@section('title', 'Editar usuario')
 
 @section('content_header')
-    <h1>Creación de usuarios</h1>
+    <h1>Editar de usuario</h1>
 @stop
 
 @section('content')
@@ -25,7 +25,7 @@
                        </div>
                    @endif
 
-                   {!! Form::open(array('route' => 'users.store', 'method' => 'POST')) !!}
+                   {!! Form::model($user,['method' => 'PUT', 'route' =>['usuarios.update', $user->id]]) !!}
                      <div class="row">
                          <div class="col-xs-12 col-sm-12 col-md-12">
                              <div class="form-group">
@@ -35,20 +35,20 @@
                          </div>
                          <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label for="email">E-mail</label>
                                 {!! Form::text('email', null, array('class' => 'form-control')) !!}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <label for="password">Contraseña</label>
-                                {!! Form::text('password', array('class' => 'form-control')) !!}
+                                {!! Form::text('password', null, array('class' => 'form-control')) !!}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">
                             <div class="form-group">
                                 <label for="confirm-password">Confirmar Contraseña</label>
-                                {!! Form::text('confirm-password', array('class' => 'form-control')) !!}
+                                {!! Form::text('confirm-password', null, array('class' => 'form-control')) !!}
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12">

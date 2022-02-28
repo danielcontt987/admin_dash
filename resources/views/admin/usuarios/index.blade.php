@@ -9,7 +9,7 @@
 @section('content')
 
 
-<a href="{{route('users.create')}}" class="btn btn-primary">Crear Usuario</a>
+<a href="{{route('usuarios.create')}}" class="btn btn-primary">Crear Usuario</a>
 <table class="table">
     <thead>
       <tr>
@@ -37,8 +37,8 @@
                 @endif
             </td>
             <td class="text-center">
-                <a href="{{route('users.edit', $user->id)}}" class="btn btn-warning">Editar</a>
-                 {!! Form::open(['method' =>'DELETE', 'route' => ['users.destroy', $user->id], 'style' => 'display:inline']) !!}
+                <a href="{{route('usuarios.edit', $user->id)}}" class="btn btn-warning">Editar</a>
+                 {!! Form::open(['method' =>'DELETE', 'route' => ['usuarios.destroy', $user->id], 'style' => 'display:inline']) !!}
                      {!! Form::submit('Borrar', ['class' => 'btn btn-danger']) !!}
                  {!! Form::close() !!}
             </td>
