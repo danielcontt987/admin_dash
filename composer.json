@@ -16,6 +16,7 @@
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.3",
         "livewire/livewire": "^2.5",
+        "nwidart/laravel-modules": "^8.3",
         "spatie/laravel-permission": "^5.5"
     },
     "require-dev": {
@@ -31,7 +32,8 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Modules\\": "Modules/"
         }
     },
     "autoload-dev": {

@@ -1,9 +1,6 @@
 <?php
 
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\RoleController;
-use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+use Illuminate\Support\Facades\Route;
+use Modules\Admin\Http\Controllers\AdminController;
+use Modules\Admin\Http\Controllers\RolController;
+use Modules\Admin\Http\Controllers\UserController;
+use Modules\Blog\Http\Controllers\BlogController;
+
 Route::get('/', function () {
     return view('auth.login');
 });
@@ -25,15 +28,17 @@ Route::get('/', function () {
 
 //Main panel
 Route::middleware(['auth:sanctum', 'verified'])->get('/principal', function () {
-    return view('principal.index');
+    return view('principal.dash');
 })->name('principal');
 
 
-Route::group(['middleware' => ['auth']], function(){
 
   Route::prefix('/admin')->group(function () {
     Route::resource('/usuarios', UserController::class);
-    Route::resource('/roles', RoleController::class);
+    Route::resource('/roles', RolController::class);
+
 });
-  Route::resource('blogs', BlogController::class);
-});
+
+Route::resource('/blogs', BlogController::class);
+
+
